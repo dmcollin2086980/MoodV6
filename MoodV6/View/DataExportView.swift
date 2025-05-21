@@ -1,14 +1,18 @@
 import SwiftUI
-import UniformTypeIdentifiers
+@_exported import class MoodV6.DataExportViewModel
 
 struct DataExportView: View {
     @StateObject private var viewModel: DataExportViewModel
     @Environment(\.dismiss) private var dismiss
     
     init() {
-        let store = try! MoodStore()
-        let exportService = DataExportService(moodStore: store)
-        _viewModel = StateObject(wrappedValue: DataExportViewModel(exportService: exportService))
+        do {
+            let store = try MoodStore()
+            let exportService = DataExportService(moodStore: store)
+            _viewModel = StateObject(wrappedValue: DataExportViewModel(exportService: exportService))
+        } catch {
+            fatalError("Failed to initialize store: \(error)")
+        }
     }
     
     var body: some View {
@@ -22,6 +26,8 @@ struct DataExportView: View {
                     } label: {
                         Label("Export Data", systemImage: "square.and.arrow.up")
                     }
+                } header: {
+                    Text("Export Options")
                 }
                 
                 if let exportURL = viewModel.exportURL {
@@ -32,7 +38,7 @@ struct DataExportView: View {
                     }
                 }
             }
-            .navigationTitle("Export Data")
+            .navigationTitle("Data Export")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Done") {
@@ -45,28 +51,6 @@ struct DataExportView: View {
             } message: {
                 Text(viewModel.error?.localizedDescription ?? "An unknown error occurred")
             }
-        }
-    }
-}
-
-@MainActor
-class DataExportViewModel: ObservableObject {
-    @Published var exportURL: URL?
-    @Published var showingError = false
-    @Published var error: Error?
-    
-    private let exportService: DataExportService
-    
-    init(exportService: DataExportService) {
-        self.exportService = exportService
-    }
-    
-    func exportData() async {
-        do {
-            exportURL = try await exportService.exportData()
-        } catch {
-            self.error = error
-            showingError = true
         }
     }
 }

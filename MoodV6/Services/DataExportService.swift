@@ -350,7 +350,7 @@ class DataExportService {
             moodEntry.date = entry.date
             moodEntry.moodType = entry.moodType
             moodEntry.note = entry.note
-            try moodStore.save(moodEntry)
+            try moodStore.save(entry: moodEntry)
         }
     }
     

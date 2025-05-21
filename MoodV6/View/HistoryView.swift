@@ -6,7 +6,7 @@ struct HistoryView: View {
     @Environment(\.dismiss) private var dismiss
     
     init() {
-        let store = RealmMoodStore()
+        let store = try! MoodStore()
         _viewModel = StateObject(wrappedValue: HistoryViewModel(moodStore: store))
     }
     
@@ -66,21 +66,45 @@ struct HistoryView: View {
 struct MoodEntryRow: View {
     let entry: MoodEntry
     
+    private var moodType: MoodType? {
+        MoodType(rawValue: entry.moodType)
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
-                Text(entry.mood.rawValue)
-                    .font(.headline)
+                if let mood = moodType {
+                    Text("\(mood.emoji) \(mood.rawValue)")
+                        .font(.headline)
+                } else {
+                    Text(entry.moodType)
+                        .font(.headline)
+                }
                 Spacer()
-                Text(entry.timestamp, style: .time)
+                Text(entry.date, style: .time)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
             
-            if !entry.note.isEmpty {
-                Text(entry.note)
+            if let note = entry.note, !note.isEmpty {
+                Text(note)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
+            }
+            
+            if !entry.tags.isEmpty {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(Array(entry.tags), id: \.self) { tag in
+                            Text(tag)
+                                .font(.caption)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 4)
+                                .background(Color.blue.opacity(0.1))
+                                .cornerRadius(8)
+                        }
+                    }
+                }
             }
         }
         .padding(.vertical, 4)
