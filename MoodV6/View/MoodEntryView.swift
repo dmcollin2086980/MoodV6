@@ -41,7 +41,7 @@ struct MoodEntryView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
                         Task {
-                            await viewModel.saveEntry()
+                            await viewModel.saveMood()
                             dismiss()
                         }
                     }

@@ -65,7 +65,7 @@ class HistoryViewModel: ObservableObject {
     }
     
     private func setupEntriesPublisher() {
-        let (stream, continuation) = AsyncStream<[MoodEntry]>.makeStream()
+        let (stream, _) = AsyncStream<[MoodEntry]>.makeStream()
         entriesPublisher = stream
         
         task = Task {
@@ -93,20 +93,14 @@ class HistoryViewModel: ObservableObject {
         }
     }
     
-    func deleteEntry(_ entry: MoodEntry) {
-        do {
-            try moodStore.delete(entry: entry)
-        } catch {
-            self.error = error
-        }
-    }
+
     
-    func refreshEntries() {
+    func refreshEntries() async {
         isLoading = true
         if let dateRange = selectedTimeFrame.dateRange {
-            entries = moodStore.fetchEntries(from: dateRange.start, to: dateRange.end)
+            entries = await moodStore.fetchEntries(from: dateRange.start, to: dateRange.end)
         } else {
-            entries = moodStore.fetchAllEntries()
+            entries = await moodStore.fetchAllEntries()
         }
         isLoading = false
     }
@@ -127,18 +121,6 @@ class HistoryViewModel: ObservableObject {
             }
         } catch {
             print("Error fetching entries: \(error)")
-        }
-    }
-    
-    func deleteEntry(_ entry: MoodEntry) async {
-        do {
-            let realm = try await Realm()
-            try await realm.write {
-                realm.delete(entry)
-            }
-            await fetchEntries()
-        } catch {
-            print("Error deleting entry: \(error)")
         }
     }
     

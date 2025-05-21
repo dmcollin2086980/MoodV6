@@ -5,10 +5,10 @@ import Combine
 protocol MoodStoreProtocol {
     var entriesPublisher: AnyPublisher<[MoodEntry], Never> { get }
     
-    func save(entry: MoodEntry) throws
-    func delete(entry: MoodEntry) throws
-    func fetchEntries(from startDate: Date, to endDate: Date) -> [MoodEntry]
-    func fetchAllEntries() -> [MoodEntry]
+    func save(entry: MoodEntry) async throws
+    func delete(entry: MoodEntry) async throws
+    func fetchEntries(from startDate: Date, to endDate: Date) async -> [MoodEntry]
+    func fetchAllEntries() async -> [MoodEntry]
 }
 
 @MainActor
@@ -41,24 +41,33 @@ class MoodStore: ObservableObject, MoodStoreProtocol {
         }
     }
     
-    func save(entry: MoodEntry) throws {
-        try realm.write {
-            realm.add(entry)
-        }
+    func save(entry: MoodEntry) async throws {
+        try await Task { @MainActor in
+            try realm.write {
+                realm.add(entry)
+            }
+        }.value
     }
     
-    func fetchAllEntries() -> [MoodEntry] {
-        Array(realm.objects(MoodEntry.self).sorted(byKeyPath: "date", ascending: false))
+    func delete(entry: MoodEntry) async throws {
+        try await Task { @MainActor in
+            try realm.write {
+                realm.delete(entry)
+            }
+        }.value
     }
     
-    func fetchEntries(from startDate: Date, to endDate: Date) -> [MoodEntry] {
-        let predicate = NSPredicate(format: "date >= %@ AND date <= %@", startDate as NSDate, endDate as NSDate)
-        return Array(realm.objects(MoodEntry.self).filter(predicate).sorted(byKeyPath: "date", ascending: false))
+    func fetchEntries(from startDate: Date, to endDate: Date) async -> [MoodEntry] {
+        await Task { @MainActor in
+            Array(realm.objects(MoodEntry.self)
+                .filter("date >= %@ AND date < %@", startDate, endDate)
+                .sorted(byKeyPath: "date", ascending: false))
+        }.value
     }
     
-    func delete(entry: MoodEntry) throws {
-        try realm.write {
-            realm.delete(entry)
-        }
+    func fetchAllEntries() async -> [MoodEntry] {
+        await Task { @MainActor in
+            Array(realm.objects(MoodEntry.self).sorted(byKeyPath: "date", ascending: false))
+        }.value
     }
 } 

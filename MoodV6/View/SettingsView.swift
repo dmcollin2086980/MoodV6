@@ -1,12 +1,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @StateObject private var viewModel: SettingsViewModel
+    @ObservedObject var viewModel: SettingsViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
-    init(settingsStore: SettingsStore) {
-        _viewModel = StateObject(wrappedValue: SettingsViewModel(settingsStore: settingsStore))
-    }
     
     var body: some View {
         NavigationView {
@@ -121,5 +117,5 @@ struct TimePickerView: View {
 }
 
 #Preview {
-    SettingsView(settingsStore: try! RealmSettingsStore())
+    SettingsView(viewModel: SettingsViewModel(settingsStore: try! RealmSettingsStore()))
 } 

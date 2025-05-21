@@ -49,7 +49,11 @@ struct HistoryView: View {
                 Button("Delete", role: .destructive) {
                     if let entry = viewModel.entryToDelete {
                         Task {
-                            await viewModel.deleteEntry(entry)
+                            do {
+                                try await viewModel.deleteEntry(entry)
+                            } catch {
+                                print("Error deleting entry: \(error)")
+                            }
                         }
                     }
                 }

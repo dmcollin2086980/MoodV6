@@ -1,18 +1,12 @@
 import SwiftUI
-@_exported import class MoodV6.DataExportViewModel
 
 struct DataExportView: View {
     @StateObject private var viewModel: DataExportViewModel
     @Environment(\.dismiss) private var dismiss
     
-    init() {
-        do {
-            let store = try MoodStore()
-            let exportService = DataExportService(moodStore: store)
-            _viewModel = StateObject(wrappedValue: DataExportViewModel(exportService: exportService))
-        } catch {
-            fatalError("Failed to initialize store: \(error)")
-        }
+    init(moodStore: MoodStore, goalStore: GoalStore, settingsStore: SettingsStore) {
+        let exportService = DataExportService(moodStore: moodStore, goalStore: goalStore, settingsStore: settingsStore)
+        _viewModel = StateObject(wrappedValue: DataExportViewModel(dataExportService: exportService))
     }
     
     var body: some View {
@@ -46,7 +40,7 @@ struct DataExportView: View {
                     }
                 }
             }
-            .alert("Export Error", isPresented: $viewModel.showingError) {
+            .alert("Export Error", isPresented: viewModel.alertBinding) {
                 Button("OK", role: .cancel) { }
             } message: {
                 Text(viewModel.error?.localizedDescription ?? "An unknown error occurred")
@@ -56,5 +50,8 @@ struct DataExportView: View {
 }
 
 #Preview {
-    DataExportView()
+    let moodStore = try! MoodStore()
+    let goalStore = try! RealmGoalStore()
+    let settingsStore = try! RealmSettingsStore()
+    DataExportView(moodStore: moodStore, goalStore: goalStore, settingsStore: settingsStore)
 } 

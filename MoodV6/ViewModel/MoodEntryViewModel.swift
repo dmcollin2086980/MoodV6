@@ -1,5 +1,7 @@
 import Foundation
 import Combine
+import SwiftUI
+import RealmSwift
 
 class MoodEntryViewModel: ObservableObject {
     @Published var selectedMood: MoodType?
@@ -8,10 +10,10 @@ class MoodEntryViewModel: ObservableObject {
     @Published var isSaving = false
     @Published var error: Error?
     
-    private let moodStore: MoodStore
+    private let moodStore: MoodStoreProtocol
     private var cancellables = Set<AnyCancellable>()
     
-    init(moodStore: MoodStore) {
+    init(moodStore: MoodStoreProtocol) {
         self.moodStore = moodStore
     }
     
@@ -19,7 +21,7 @@ class MoodEntryViewModel: ObservableObject {
         selectedMood != nil
     }
     
-    func saveMood() {
+    @MainActor func saveMood() async {
         guard let mood = selectedMood else { return }
         
         isSaving = true
@@ -30,7 +32,7 @@ class MoodEntryViewModel: ObservableObject {
         )
         
         do {
-            try moodStore.save(entry)
+            try await moodStore.save(entry: entry)
             resetForm()
         } catch {
             self.error = error

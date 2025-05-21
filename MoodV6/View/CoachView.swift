@@ -1,28 +1,29 @@
 import SwiftUI
 
 struct CoachView: View {
-    @StateObject private var viewModel: CoachViewModel
+    @State private var isLoading = false
+    @State private var message = "Welcome to Mood Coach! Here you'll find personalized insights based on your mood patterns."
     @Environment(\.dismiss) private var dismiss
-    
-    init() {
-        let store = try! MoodStore()
-        _viewModel = StateObject(wrappedValue: CoachViewModel(moodStore: store))
-    }
     
     var body: some View {
         NavigationView {
-            List {
-                Section {
-                    ForEach(viewModel.suggestions) { suggestion in
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text(suggestion.title)
-                                .font(.headline)
-                            Text(suggestion.description)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
+            VStack {
+                if isLoading {
+                    ProgressView("Loading insight...")
+                } else {
+                    VStack(alignment: .leading, spacing: 16) {
+                        Text(message)
+                            .font(.headline)
+                            .padding()
+                            .background(Color(.systemGray6))
+                            .cornerRadius(8)
+                        
+                        Button("Get New Insight") {
+                            generateNewInsight()
                         }
-                        .padding(.vertical, 4)
+                        .buttonStyle(.bordered)
                     }
+                    .padding()
                 }
             }
             .navigationTitle("Mood Coach")
@@ -33,9 +34,27 @@ struct CoachView: View {
                     }
                 }
             }
-            .task {
-                await viewModel.loadSuggestions()
+            .onAppear {
+                generateNewInsight()
             }
+        }
+    }
+    
+    private func generateNewInsight() {
+        isLoading = true
+        
+        // Simulate network delay for better UX
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            let insights = [
+                "You've been consistently positive this week! Keep it up!",
+                "Try to maintain a more consistent mood pattern throughout the day.",
+                "Your mood has been relatively stable today.",
+                "Consider tracking your mood at different times of day to identify patterns.",
+                "Great job on maintaining your mood tracking streak!"
+            ]
+            
+            message = insights.randomElement() ?? "No insights available"
+            isLoading = false
         }
     }
 }

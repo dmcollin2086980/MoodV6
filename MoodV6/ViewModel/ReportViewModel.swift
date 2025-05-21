@@ -17,12 +17,12 @@ class ReportViewModel: ObservableObject {
         self.reportService = reportService
     }
     
-    func generateReport() {
+    func generateReport() async {
         isLoading = true
         error = nil
         
         do {
-            report = try reportService.generateWeeklyReport()
+            report = try await reportService.generateWeeklyReport()
         } catch {
             self.error = error
         }

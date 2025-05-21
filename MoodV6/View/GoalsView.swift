@@ -1,14 +1,10 @@
 import SwiftUI
 
 struct GoalsView: View {
-    @StateObject private var viewModel: GoalsViewModel
+    @ObservedObject var viewModel: GoalViewModel
     @State private var showingNewGoalSheet = false
     @State private var showingDeleteAlert = false
     @State private var goalToDelete: Goal?
-    
-    init(goalStore: GoalStore) {
-        _viewModel = StateObject(wrappedValue: GoalsViewModel(goalStore: goalStore))
-    }
     
     var body: some View {
         NavigationView {
@@ -52,7 +48,13 @@ struct GoalsView: View {
                 Button("Cancel", role: .cancel) { }
                 Button("Delete", role: .destructive) {
                     if let goal = goalToDelete {
-                        viewModel.deleteGoal(goal)
+                        Task {
+                            do {
+                                try await viewModel.deleteGoal(goal)
+                            } catch {
+                                viewModel.error = error
+                            }
+                        }
                     }
                 }
             } message: {
@@ -70,6 +72,9 @@ struct GoalsView: View {
             }
             .withErrorAlert(error: $viewModel.error) {
                 viewModel.error = nil
+            }
+            .task {
+                await viewModel.fetchGoals()
             }
         }
     }
@@ -111,7 +116,7 @@ struct GoalsView: View {
 }
 
 struct NewGoalView: View {
-    @ObservedObject var viewModel: GoalsViewModel
+    @ObservedObject var viewModel: GoalViewModel
     @Environment(\.dismiss) private var dismiss
     
     @State private var title = ""
@@ -143,12 +148,17 @@ struct NewGoalView: View {
             .navigationBarItems(
                 leading: Button("Cancel") { dismiss() },
                 trailing: Button("Save") {
-                    viewModel.createGoal(
-                        title: title,
-                        goalDescription: description,
-                        frequency: frequency,
-                        targetCount: targetCount
-                    )
+                    Task {
+                        do {
+                            try await viewModel.addGoal(
+                                title: title,
+                                description: description,
+                                targetDate: Date()
+                            )
+                        } catch {
+                            viewModel.error = error
+                        }
+                    }
                     dismiss()
                 }
                 .disabled(title.isEmpty)
@@ -158,5 +168,5 @@ struct NewGoalView: View {
 }
 
 #Preview {
-    GoalsView(goalStore: try! RealmGoalStore())
+    GoalsView(viewModel: GoalViewModel(goalStore: try! RealmGoalStore()))
 } 

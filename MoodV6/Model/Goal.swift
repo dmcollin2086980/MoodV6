@@ -39,7 +39,9 @@ class Goal: Object, Identifiable {
     @Persisted var targetCount: Int
     @Persisted var currentCount: Int
     @Persisted var startDate: Date
+    @Persisted var targetDate: Date
     @Persisted var lastCompletedDate: Date?
+    @Persisted var completedDate: Date?
     @Persisted var isCompleted = false
     @Persisted var completions = List<GoalCompletion>()
     
@@ -48,7 +50,7 @@ class Goal: Object, Identifiable {
         self.goalDescription = ""
     }
     
-    convenience init(title: String, goalDescription: String, frequency: GoalFrequency, targetCount: Int) {
+    convenience init(title: String, goalDescription: String, frequency: GoalFrequency, targetCount: Int, targetDate: Date = Date().addingTimeInterval(30 * 24 * 3600)) {
         self.init()
         self.id = ObjectId.generate()
         self.title = title
@@ -57,6 +59,7 @@ class Goal: Object, Identifiable {
         self.targetCount = targetCount
         self.currentCount = 0
         self.startDate = Date()
+        self.targetDate = targetDate
     }
     
     var progress: Double {
@@ -86,6 +89,7 @@ class Goal: Object, Identifiable {
         
         if currentCount >= targetCount {
             isCompleted = true
+            completedDate = Date()
         }
     }
     

@@ -4,6 +4,9 @@ import Foundation
 class GoalViewModel: ObservableObject {
     @Published var goals: [Goal] = []
     @Published var showingAddGoalSheet = false
+    @Published var error: Error?
+    @Published var showingCompletionAlert = false
+    @Published var completedGoal: Goal?
     
     private let goalStore: GoalStore
     
@@ -11,38 +14,56 @@ class GoalViewModel: ObservableObject {
         self.goalStore = goalStore
     }
     
+    var overdueGoals: [Goal] {
+        let now = Date()
+        return goals.filter { goal in
+            !goal.isCompleted && goal.targetDate < now
+        }
+    }
+    
+    var activeGoals: [Goal] {
+        let now = Date()
+        return goals.filter { goal in
+            !goal.isCompleted && goal.targetDate >= now
+        }
+    }
+    
+    var completedGoals: [Goal] {
+        goals.filter { $0.isCompleted }
+    }
+    
     func fetchGoals() async {
-        do {
-            goals = try await goalStore.fetchGoals()
-        } catch {
-            print("Error fetching goals: \(error)")
-        }
+        goals = await goalStore.fetchAllGoals()
     }
     
-    func addGoal(title: String, description: String, targetDate: Date) async {
-        do {
-            try await goalStore.addGoal(title: title, description: description, targetDate: targetDate)
-            await fetchGoals()
-        } catch {
-            print("Error adding goal: \(error)")
-        }
+    func addGoal(title: String, description: String, targetDate: Date) async throws {
+        let goal = Goal()
+        goal.id = ObjectId.generate()
+        goal.title = title
+        goal.goalDescription = description
+        goal.startDate = Date()
+        goal.targetDate = targetDate
+        
+        try await Task { @MainActor in
+            try goalStore.save(goal)
+        }.value
+        
+        await fetchGoals()
     }
     
-    func updateGoal(_ goal: Goal) async {
-        do {
-            try await goalStore.updateGoal(goal)
-            await fetchGoals()
-        } catch {
-            print("Error updating goal: \(error)")
-        }
+    func updateGoal(_ goal: Goal) async throws {
+        try await Task { @MainActor in
+            try goalStore.update(goal)
+        }.value
+        
+        await fetchGoals()
     }
     
-    func deleteGoal(_ goal: Goal) async {
-        do {
-            try await goalStore.deleteGoal(goal)
-            await fetchGoals()
-        } catch {
-            print("Error deleting goal: \(error)")
-        }
+    func deleteGoal(_ goal: Goal) async throws {
+        try await Task { @MainActor in
+            try goalStore.delete(goal: goal)
+        }.value
+        
+        await fetchGoals()
     }
 } 

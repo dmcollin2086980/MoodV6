@@ -14,7 +14,9 @@ targets:
     type: application
     platform: iOS
     sources:
-      - MoodV6
+      - path: MoodV6
+        excludes:
+          - "Store/**"
     settings:
       base:
         INFOPLIST_FILE: MoodV6/Info.plist

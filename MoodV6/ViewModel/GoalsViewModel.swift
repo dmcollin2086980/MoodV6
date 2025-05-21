@@ -25,45 +25,41 @@ class GoalsViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func createGoal(title: String, goalDescription: String, frequency: GoalFrequency, targetCount: Int) {
-        let goal = Goal(title: title, goalDescription: goalDescription, frequency: frequency, targetCount: targetCount)
+    func createGoal(title: String, goalDescription: String, frequency: GoalFrequency, targetCount: Int, targetDate: Date = Date().addingTimeInterval(30 * 24 * 3600)) async throws {
+        let goal = Goal(title: title, goalDescription: goalDescription, frequency: frequency, targetCount: targetCount, targetDate: targetDate)
         
-        do {
+        try await Task { @MainActor in
             try goalStore.save(goal)
-        } catch {
-            self.error = error
-        }
+        }.value
     }
     
-    func deleteGoal(_ goal: Goal) {
-        do {
+    func deleteGoal(_ goal: Goal) async throws {
+        try await Task { @MainActor in
             try goalStore.delete(goal: goal)
-        } catch {
-            self.error = error
-        }
+        }.value
     }
     
-    func incrementProgress(for goal: Goal) {
-        do {
-            goal.incrementProgress()
+    func incrementProgress(for goal: Goal) async throws {
+        goal.incrementProgress()
+        
+        try await Task { @MainActor in
             try goalStore.update(goal)
-            
-            if goal.isCompleted {
+        }.value
+        
+        if goal.isCompleted {
+            await MainActor.run {
                 completedGoal = goal
                 showingCompletionAlert = true
             }
-        } catch {
-            self.error = error
         }
     }
     
-    func resetProgress(for goal: Goal) {
-        do {
-            goal.resetProgress()
+    func resetProgress(for goal: Goal) async throws {
+        goal.resetProgress()
+        
+        try await Task { @MainActor in
             try goalStore.update(goal)
-        } catch {
-            self.error = error
-        }
+        }.value
     }
     
     var activeGoals: [Goal] {

@@ -21,8 +21,8 @@ class CoachService {
         self.moodStore = moodStore
     }
     
-    func generateDailyInsight() -> CoachingInsight {
-        let entries = moodStore.fetchAllEntries()
+    func generateDailyInsight() async -> CoachingInsight {
+        let entries = await moodStore.fetchAllEntries()
         let recentEntries = getRecentEntries(entries, days: 7)
         
         if recentEntries.isEmpty {

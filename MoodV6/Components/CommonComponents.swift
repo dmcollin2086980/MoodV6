@@ -122,7 +122,10 @@ struct ErrorAlert: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .alert("Error", isPresented: .constant(error != nil)) {
+            .alert("Error", isPresented: Binding(
+                get: { error != nil },
+                set: { _ in }
+            )) {
                 Button("OK") { action() }
             } message: {
                 if let error = error {

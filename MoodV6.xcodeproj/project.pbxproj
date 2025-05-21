@@ -12,9 +12,11 @@
 		17235001C5133B8E2F424220 /* DataExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18297C6E44B1EFEDA78A6FD1 /* DataExportService.swift */; };
 		2DA8402D7CD2C1C6C8A4A006 /* MoodV6App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB9154AB4F5E4037D355861 /* MoodV6App.swift */; };
 		31BDDB79752D48F741ABE787 /* DataExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BA243483081066C45601 /* DataExportView.swift */; };
+		3C50D7560C0926BAAEB017C5 /* RealmMoodStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D56BD53751ADFC16394A899 /* RealmMoodStore.swift */; };
 		449F6C4D328FC16A90EC3CD2 /* MoodV6Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01106F9B00362AA290A5D828 /* MoodV6Tests.swift */; };
 		46498D457BA7C32571B47DEC /* ReportComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095F29D28889FD6FC5E4180 /* ReportComponents.swift */; };
 		46EB5C3D5D8C1AB92AE45B8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A2970FC31914856475B12B /* ContentView.swift */; };
+		4EF88B69D4101B5E6FA74418 /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC5A4B33557B91766D4E8B /* MoodView.swift */; };
 		508F74E43573B265104754AA /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E2C5736ACD5FC25F5E6760 /* Goal.swift */; };
 		59AC5874BABD9F54E788D605 /* MoodStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38A69434F39F817D7B9DF0B /* MoodStore.swift */; };
 		5BD8BF32D2235A471CB5CB60 /* CoachViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DA3003348E7FB66FE3B889 /* CoachViewModel.swift */; };
@@ -24,10 +26,12 @@
 		7BA184F9ED18BD51BD02FA16 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4CBCB55FF60BA0A956B33 /* Item.swift */; };
 		7E0BE3470BF0E21CFD2A442B /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342AB9A0058CA25813AF575 /* ReportViewModel.swift */; };
 		84F47BCDE0D95D7769428F1E /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20140E381CB3EA139D9737F7 /* HistoryViewModel.swift */; };
+		8956B917A1CC9157C074466A /* MoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E1BE8D897FE7C71366919 /* MoodViewModel.swift */; };
 		8BEEF325CB44850692B81419 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE3B04ABFC615B1140BF2745 /* RealmSwift */; };
 		911F8CFE71C060DD7FA45238 /* GoalComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA652918B5A202F587C0C5 /* GoalComponents.swift */; };
 		93A0ED40C1831D4EE9F9F1BE /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD52E6A4EF490FF43475B0B /* HistoryView.swift */; };
 		9BFBBBD38F154AA3423E263D /* MoodEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F342DDD0C9B77D60A5F9F7 /* MoodEntryView.swift */; };
+		9F790D9A019D0B8D9E311580 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF3A0203EE78297F3588598 /* GoalViewModel.swift */; };
 		A3EC4FF833B45B70C42627DE /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC1BD3F4547D77745AF673 /* ReportService.swift */; };
 		B18B8D790C8ADAF0909A5DD6 /* DataExportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C994829BD4BE2B0BAFCADCB1 /* DataExportViewModel.swift */; };
 		B98E17A59317217F196AD241 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4030F5F7C90519A38F4C3F0A /* ReportView.swift */; };
@@ -56,6 +60,7 @@
 		01106F9B00362AA290A5D828 /* MoodV6Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodV6Tests.swift; sourceTree = "<group>"; };
 		09E2C5736ACD5FC25F5E6760 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		0C4E583DB91014D639062E9D /* MoodV6.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoodV6.entitlements; sourceTree = "<group>"; };
+		0D56BD53751ADFC16394A899 /* RealmMoodStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMoodStore.swift; sourceTree = "<group>"; };
 		18297C6E44B1EFEDA78A6FD1 /* DataExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExportService.swift; sourceTree = "<group>"; };
 		20140E381CB3EA139D9737F7 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		31CBC7E9AE0F82549EBF60EE /* CommonComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonComponents.swift; sourceTree = "<group>"; };
@@ -73,10 +78,12 @@
 		63A2970FC31914856475B12B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6AC27ED06F0261428124F108 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		75DA652918B5A202F587C0C5 /* GoalComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalComponents.swift; sourceTree = "<group>"; };
+		79CC5A4B33557B91766D4E8B /* MoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodView.swift; sourceTree = "<group>"; };
 		8095F29D28889FD6FC5E4180 /* ReportComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportComponents.swift; sourceTree = "<group>"; };
 		86DA3003348E7FB66FE3B889 /* CoachViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachViewModel.swift; sourceTree = "<group>"; };
 		91CC1BD3F4547D77745AF673 /* ReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
 		95F342DDD0C9B77D60A5F9F7 /* MoodEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntryView.swift; sourceTree = "<group>"; };
+		965E1BE8D897FE7C71366919 /* MoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewModel.swift; sourceTree = "<group>"; };
 		9C0FF2133CCE404FEE4AD363 /* CoachService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachService.swift; sourceTree = "<group>"; };
 		9CD52E6A4EF490FF43475B0B /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		9FBC098F19A7F7D651C8C8F6 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -87,6 +94,7 @@
 		C732DA753894C94475309DA7 /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
 		C994829BD4BE2B0BAFCADCB1 /* DataExportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExportViewModel.swift; sourceTree = "<group>"; };
 		E2A4CBCB55FF60BA0A956B33 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		EEF3A0203EE78297F3588598 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 		F31B20FF929645346D6955B8 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		F342AB9A0058CA25813AF575 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +139,7 @@
 				C732DA753894C94475309DA7 /* GoalsView.swift */,
 				9CD52E6A4EF490FF43475B0B /* HistoryView.swift */,
 				95F342DDD0C9B77D60A5F9F7 /* MoodEntryView.swift */,
+				79CC5A4B33557B91766D4E8B /* MoodView.swift */,
 				4401CA098D303815BF7BA7C3 /* SettingsView.swift */,
 			);
 			path = View;
@@ -178,6 +187,7 @@
 				18297C6E44B1EFEDA78A6FD1 /* DataExportService.swift */,
 				3F64887862D1419D68FB6785 /* GoalStore.swift */,
 				C38A69434F39F817D7B9DF0B /* MoodStore.swift */,
+				0D56BD53751ADFC16394A899 /* RealmMoodStore.swift */,
 				91CC1BD3F4547D77745AF673 /* ReportService.swift */,
 				F31B20FF929645346D6955B8 /* SettingsStore.swift */,
 			);
@@ -190,8 +200,10 @@
 				86DA3003348E7FB66FE3B889 /* CoachViewModel.swift */,
 				C994829BD4BE2B0BAFCADCB1 /* DataExportViewModel.swift */,
 				433D8B967B9975B0997C7BF4 /* GoalsViewModel.swift */,
+				EEF3A0203EE78297F3588598 /* GoalViewModel.swift */,
 				20140E381CB3EA139D9737F7 /* HistoryViewModel.swift */,
 				42C0BCCD279F921FF981FA66 /* MoodEntryViewModel.swift */,
+				965E1BE8D897FE7C71366919 /* MoodViewModel.swift */,
 				F342AB9A0058CA25813AF575 /* ReportViewModel.swift */,
 				9FBC098F19A7F7D651C8C8F6 /* SettingsViewModel.swift */,
 			);
@@ -319,6 +331,7 @@
 				508F74E43573B265104754AA /* Goal.swift in Sources */,
 				911F8CFE71C060DD7FA45238 /* GoalComponents.swift in Sources */,
 				D7080B0A336847DA0D194E27 /* GoalStore.swift in Sources */,
+				9F790D9A019D0B8D9E311580 /* GoalViewModel.swift in Sources */,
 				DBA7A1AE1BE676FA8253C577 /* GoalsView.swift in Sources */,
 				6EF1502236AAF9D5B91F68BA /* GoalsViewModel.swift in Sources */,
 				93A0ED40C1831D4EE9F9F1BE /* HistoryView.swift in Sources */,
@@ -330,6 +343,9 @@
 				DD923CD41E9FC6612ED0F33E /* MoodEntryViewModel.swift in Sources */,
 				59AC5874BABD9F54E788D605 /* MoodStore.swift in Sources */,
 				2DA8402D7CD2C1C6C8A4A006 /* MoodV6App.swift in Sources */,
+				4EF88B69D4101B5E6FA74418 /* MoodView.swift in Sources */,
+				8956B917A1CC9157C074466A /* MoodViewModel.swift in Sources */,
+				3C50D7560C0926BAAEB017C5 /* RealmMoodStore.swift in Sources */,
 				46498D457BA7C32571B47DEC /* ReportComponents.swift in Sources */,
 				A3EC4FF833B45B70C42627DE /* ReportService.swift in Sources */,
 				B98E17A59317217F196AD241 /* ReportView.swift in Sources */,

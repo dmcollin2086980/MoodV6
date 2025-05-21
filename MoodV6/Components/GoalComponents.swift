@@ -22,11 +22,27 @@ struct GoalCard: View {
                     Spacer()
                     
                     Menu {
-                        Button(action: { viewModel.incrementProgress(for: goal) }) {
+                        Button(action: { 
+                            Task {
+                                do {
+                                    try await viewModel.incrementProgress(for: goal)
+                                } catch {
+                                    viewModel.error = error
+                                }
+                            }
+                        }) {
                             Label("Mark Progress", systemImage: "plus.circle")
                         }
                         
-                        Button(action: { viewModel.resetProgress(for: goal) }) {
+                        Button(action: { 
+                            Task {
+                                do {
+                                    try await viewModel.resetProgress(for: goal)
+                                } catch {
+                                    viewModel.error = error
+                                }
+                            }
+                        }) {
                             Label("Reset Progress", systemImage: "arrow.counterclockwise")
                         }
                         
@@ -58,7 +74,13 @@ struct GoalCard: View {
         .alert("Delete Goal", isPresented: $showingDeleteAlert) {
             Button("Cancel", role: .cancel) { }
             Button("Delete", role: .destructive) {
-                viewModel.deleteGoal(goal)
+                Task {
+                    do {
+                        try await viewModel.deleteGoal(goal)
+                    } catch {
+                        viewModel.error = error
+                    }
+                }
             }
         } message: {
             Text("Are you sure you want to delete this goal?")
@@ -77,7 +99,13 @@ struct GoalList: View {
             }
             .onDelete { indexSet in
                 indexSet.forEach { index in
-                    viewModel.deleteGoal(viewModel.goals[index])
+                    Task {
+                        do {
+                            try await viewModel.deleteGoal(viewModel.goals[index])
+                        } catch {
+                            viewModel.error = error
+                        }
+                    }
                 }
             }
         }

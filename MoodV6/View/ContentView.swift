@@ -1,15 +1,6 @@
 import SwiftUI
 import RealmSwift
-
-// Import ViewModels
-@_exported import class MoodV6.MoodViewModel
-@_exported import class MoodV6.GoalViewModel
-@_exported import class MoodV6.SettingsViewModel
-
-// Import Views
-@_exported import struct MoodV6.MoodView
-@_exported import struct MoodV6.GoalsView
-@_exported import struct MoodV6.SettingsView
+import Combine
 
 struct ContentView: View {
     @StateObject private var moodViewModel: MoodViewModel

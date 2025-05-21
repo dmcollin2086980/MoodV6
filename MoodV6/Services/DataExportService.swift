@@ -130,12 +130,16 @@ class DataExportService {
     }
     
     func exportData(format: ExportFormat) async throws -> URL {
+        let entries = await moodStore.fetchAllEntries()
+        let goals = await goalStore.fetchAllGoals()
+        let settings = await settingsStore.fetchSettings()
+        
         let exportData = ExportData(
             version: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0",
             exportDate: Date(),
-            moodEntries: moodStore.fetchAllEntries().map(ExportData.MoodEntryExport.init),
-            goals: goalStore.fetchAllGoals().map(ExportData.GoalExport.init),
-            settings: ExportData.UserSettingsExport(from: settingsStore.fetchSettings())
+            moodEntries: entries.map { ExportData.MoodEntryExport(from: $0) },
+            goals: goals.map { ExportData.GoalExport(from: $0) },
+            settings: ExportData.UserSettingsExport(from: settings)
         )
         
         switch format {
@@ -148,7 +152,7 @@ class DataExportService {
         }
     }
     
-    func importData(_ data: Data, format: ExportFormat) throws {
+    func importData(_ data: Data, format: ExportFormat) async throws {
         let exportData: ExportData
         
         switch format {
@@ -162,9 +166,9 @@ class DataExportService {
         try validateImportData(exportData)
         
         // Import data
-        try importMoodEntries(exportData.moodEntries)
-        try importGoals(exportData.goals)
-        try importSettings(exportData.settings)
+        try await importMoodEntries(exportData.moodEntries)
+        try await importGoals(exportData.goals)
+        try await importSettings(exportData.settings)
     }
     
     private func generateCSV(from data: ExportData) -> String {
@@ -339,7 +343,7 @@ class DataExportService {
         }
     }
     
-    private func importMoodEntries(_ entries: [ExportData.MoodEntryExport]) throws {
+    private func importMoodEntries(_ entries: [ExportData.MoodEntryExport]) async throws {
         for entry in entries {
             let moodEntry = MoodEntry()
             do {
@@ -350,11 +354,11 @@ class DataExportService {
             moodEntry.date = entry.date
             moodEntry.moodType = entry.moodType
             moodEntry.note = entry.note
-            try moodStore.save(entry: moodEntry)
+            try await moodStore.save(entry: moodEntry)
         }
     }
     
-    private func importGoals(_ goals: [ExportData.GoalExport]) throws {
+    private func importGoals(_ goals: [ExportData.GoalExport]) async throws {
         for goal in goals {
             let newGoal = Goal()
             do {
@@ -370,11 +374,11 @@ class DataExportService {
             newGoal.startDate = goal.startDate
             newGoal.lastCompletedDate = goal.lastCompletedDate
             newGoal.isCompleted = goal.isCompleted
-            try goalStore.save(newGoal)
+            try await goalStore.save(newGoal)
         }
     }
     
-    private func importSettings(_ settings: ExportData.UserSettingsExport) throws {
+    private func importSettings(_ settings: ExportData.UserSettingsExport) async throws {
         let newSettings = UserSettings()
         newSettings.reminderEnabled = settings.reminderEnabled
         newSettings.reminderTime = settings.reminderTime
@@ -384,7 +388,7 @@ class DataExportService {
         newSettings.defaultMoodNote = settings.defaultMoodNote
         newSettings.lastBackupDate = settings.lastBackupDate
         newSettings.autoBackupEnabled = settings.autoBackupEnabled
-        try settingsStore.save(newSettings)
+        try await settingsStore.save(newSettings)
     }
     
     private func saveCSVToFile(_ csvString: String) throws -> URL {

@@ -92,7 +92,7 @@ class ReportService {
         self.coachService = coachService
     }
     
-    func generateWeeklyReport() throws -> WeeklyReport {
+    func generateWeeklyReport() async throws -> WeeklyReport {
         let calendar = Calendar.current
         let now = Date()
         
@@ -103,7 +103,7 @@ class ReportService {
         }
         
         // Fetch mood entries for the week
-        let entries = moodStore.fetchEntries(from: startDate, to: endDate)
+        let entries = await moodStore.fetchEntries(from: startDate, to: endDate)
         
         // Calculate mood distribution and averages
         let (moodDistribution, averageMood, mostFrequentMood) = calculateMoodStats(entries: entries)
@@ -115,7 +115,8 @@ class ReportService {
         let moodTrends = analyzeMoodTrends(entries: entries, from: startDate, to: endDate)
         
         // Analyze patterns
-        let patternAnalysis = analyzePatterns(entries: entries, goals: goalStore.fetchAllGoals(), from: startDate, to: endDate)
+        let goals = await goalStore.fetchAllGoals()
+        let patternAnalysis = analyzePatterns(entries: entries, goals: goals, from: startDate, to: endDate)
         
         // Generate insights and recommendations
         let insights = generateInsights(
@@ -167,8 +168,8 @@ class ReportService {
         return (moodDistribution, averageMood, mostFrequentMood)
     }
     
-    private func calculateGoalProgress(from startDate: Date, to endDate: Date, entries: [MoodEntry]) -> [WeeklyReport.GoalProgress] {
-        let goals = goalStore.fetchAllGoals()
+    private func calculateGoalProgress(from startDate: Date, to endDate: Date, entries: [MoodEntry]) async throws -> [WeeklyReport.GoalProgress] {
+        let goals = await goalStore.fetchAllGoals()
         var goalProgress: [WeeklyReport.GoalProgress] = []
         
         for goal in goals {

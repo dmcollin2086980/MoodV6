@@ -9,23 +9,33 @@ class DataExportViewModel: ObservableObject {
     @Published var error: Error?
     @Published var showingExportSheet = false
     @Published var showingImportSheet = false
-    @Published var exportedData: Data?
+    @Published var exportURL: URL?
     @Published var exportFormat: ExportFormat = .json
+    @Published var showingError = false
     
     private let dataExportService: DataExportService
+    
+    var alertBinding: Binding<Bool> {
+        Binding(
+            get: { self.showingError },
+            set: { self.showingError = $0 }
+        )
+    }
     
     init(dataExportService: DataExportService) {
         self.dataExportService = dataExportService
     }
     
-    func exportData() {
+    func exportData() async {
         isLoading = true
         
         do {
-            exportedData = try dataExportService.exportData(format: exportFormat)
+            let url = try await dataExportService.exportData(format: exportFormat)
+            exportURL = url
             showingExportSheet = true
         } catch {
             self.error = error
+            self.showingError = true
         }
         
         isLoading = false
@@ -35,9 +45,10 @@ class DataExportViewModel: ObservableObject {
         isLoading = true
         
         do {
-            try dataExportService.importData(data, format: exportFormat)
+            try await dataExportService.importData(data, format: exportFormat)
         } catch {
             self.error = error
+            self.showingError = true
         }
         
         isLoading = false
