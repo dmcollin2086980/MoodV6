@@ -1,0 +1,34 @@
+name: MoodV6
+options:
+  bundleIdPrefix: com.yourdomain
+  deploymentTarget:
+    iOS: 17.0
+
+packages:
+  realm-swift:
+    url: https://github.com/realm/realm-swift.git
+    from: 10.45.0
+
+targets:
+  MoodV6:
+    type: application
+    platform: iOS
+    sources:
+      - MoodV6
+    settings:
+      base:
+        INFOPLIST_FILE: MoodV6/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.yourdomain.moodv6
+    dependencies:
+      - package: realm-swift
+        product: RealmSwift
+    scheme:
+      testTargets:
+        - MoodV6Tests
+  MoodV6Tests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - MoodV6Tests
+    dependencies:
+      - target: MoodV6 

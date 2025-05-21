@@ -3,365 +3,371 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 54;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		008D4793EB1877FAC8AE0EA3 /* CoachService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FF2133CCE404FEE4AD363 /* CoachService.swift */; };
+		1394A4AC18716B8F65833FCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66E3D59C3905098D87C070D /* Assets.xcassets */; };
+		17235001C5133B8E2F424220 /* DataExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18297C6E44B1EFEDA78A6FD1 /* DataExportService.swift */; };
+		2DA8402D7CD2C1C6C8A4A006 /* MoodV6App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB9154AB4F5E4037D355861 /* MoodV6App.swift */; };
+		31BDDB79752D48F741ABE787 /* DataExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D3BA243483081066C45601 /* DataExportView.swift */; };
+		449F6C4D328FC16A90EC3CD2 /* MoodV6Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01106F9B00362AA290A5D828 /* MoodV6Tests.swift */; };
+		46498D457BA7C32571B47DEC /* ReportComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095F29D28889FD6FC5E4180 /* ReportComponents.swift */; };
+		46EB5C3D5D8C1AB92AE45B8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A2970FC31914856475B12B /* ContentView.swift */; };
+		508F74E43573B265104754AA /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E2C5736ACD5FC25F5E6760 /* Goal.swift */; };
+		59AC5874BABD9F54E788D605 /* MoodStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38A69434F39F817D7B9DF0B /* MoodStore.swift */; };
+		5BD8BF32D2235A471CB5CB60 /* CoachViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DA3003348E7FB66FE3B889 /* CoachViewModel.swift */; };
+		5DB16506772DB00F9EE16745 /* CoachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC88A1001EFEF4B33FC86E /* CoachView.swift */; };
+		647505A7EB9D9BC39D566E63 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31B20FF929645346D6955B8 /* SettingsStore.swift */; };
+		6EF1502236AAF9D5B91F68BA /* GoalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D8B967B9975B0997C7BF4 /* GoalsViewModel.swift */; };
+		7BA184F9ED18BD51BD02FA16 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4CBCB55FF60BA0A956B33 /* Item.swift */; };
+		7E0BE3470BF0E21CFD2A442B /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342AB9A0058CA25813AF575 /* ReportViewModel.swift */; };
+		84F47BCDE0D95D7769428F1E /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20140E381CB3EA139D9737F7 /* HistoryViewModel.swift */; };
+		8BEEF325CB44850692B81419 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE3B04ABFC615B1140BF2745 /* RealmSwift */; };
+		911F8CFE71C060DD7FA45238 /* GoalComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA652918B5A202F587C0C5 /* GoalComponents.swift */; };
+		93A0ED40C1831D4EE9F9F1BE /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD52E6A4EF490FF43475B0B /* HistoryView.swift */; };
+		9BFBBBD38F154AA3423E263D /* MoodEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F342DDD0C9B77D60A5F9F7 /* MoodEntryView.swift */; };
+		A3EC4FF833B45B70C42627DE /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC1BD3F4547D77745AF673 /* ReportService.swift */; };
+		B18B8D790C8ADAF0909A5DD6 /* DataExportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C994829BD4BE2B0BAFCADCB1 /* DataExportViewModel.swift */; };
+		B98E17A59317217F196AD241 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4030F5F7C90519A38F4C3F0A /* ReportView.swift */; };
+		BABF98B59BDFDCD21FBADC7B /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC27ED06F0261428124F108 /* UserSettings.swift */; };
+		C9E65F8A065A65526C8A5E3F /* MoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24FB8E3714DEAE0AC7A2510 /* MoodEntry.swift */; };
+		CA6B6851FA73DDCC1E7410DE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4401CA098D303815BF7BA7C3 /* SettingsView.swift */; };
+		CEB7FA18890C3C50DB60B090 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC098F19A7F7D651C8C8F6 /* SettingsViewModel.swift */; };
+		D7080B0A336847DA0D194E27 /* GoalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64887862D1419D68FB6785 /* GoalStore.swift */; };
+		DBA7A1AE1BE676FA8253C577 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732DA753894C94475309DA7 /* GoalsView.swift */; };
+		DD923CD41E9FC6612ED0F33E /* MoodEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C0BCCD279F921FF981FA66 /* MoodEntryViewModel.swift */; };
+		E9CEC38CDA514B78A6CFEB11 /* MoodComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338189A15D2635CC23A4F49D /* MoodComponents.swift */; };
+		EC9CE651A59D0BD17B71C991 /* CommonComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CBC7E9AE0F82549EBF60EE /* CommonComponents.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
-		ACC3B2ED2DDE370900054404 /* PBXContainerItemProxy */ = {
+		46418C7AC91F4116FF5C7997 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = ACC3B2D32DDE370700054404 /* Project object */;
+			containerPortal = 2C41836A6238FBE05BF1B324 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = ACC3B2DA2DDE370700054404;
-			remoteInfo = MoodV6;
-		};
-		ACC3B2F72DDE370900054404 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ACC3B2D32DDE370700054404 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ACC3B2DA2DDE370700054404;
+			remoteGlobalIDString = 8D3D7A41A0A154D11FBCA51A;
 			remoteInfo = MoodV6;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		ACC3B2DB2DDE370700054404 /* MoodV6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodV6.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACC3B2EC2DDE370900054404 /* MoodV6Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodV6Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACC3B2F62DDE370900054404 /* MoodV6UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodV6UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01106F9B00362AA290A5D828 /* MoodV6Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodV6Tests.swift; sourceTree = "<group>"; };
+		09E2C5736ACD5FC25F5E6760 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		0C4E583DB91014D639062E9D /* MoodV6.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoodV6.entitlements; sourceTree = "<group>"; };
+		18297C6E44B1EFEDA78A6FD1 /* DataExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExportService.swift; sourceTree = "<group>"; };
+		20140E381CB3EA139D9737F7 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		31CBC7E9AE0F82549EBF60EE /* CommonComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonComponents.swift; sourceTree = "<group>"; };
+		338189A15D2635CC23A4F49D /* MoodComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodComponents.swift; sourceTree = "<group>"; };
+		34749F831F620DA69B6B9CD6 /* MoodV6.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MoodV6.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		36D3BA243483081066C45601 /* DataExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExportView.swift; sourceTree = "<group>"; };
+		3F64887862D1419D68FB6785 /* GoalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStore.swift; sourceTree = "<group>"; };
+		4030F5F7C90519A38F4C3F0A /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		42C0BCCD279F921FF981FA66 /* MoodEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntryViewModel.swift; sourceTree = "<group>"; };
+		433D8B967B9975B0997C7BF4 /* GoalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewModel.swift; sourceTree = "<group>"; };
+		4401CA098D303815BF7BA7C3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		44F8681FDF80271B7EFD7E37 /* MoodV6Tests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MoodV6Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4626EEFB53CA0BE44115796A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		51DC88A1001EFEF4B33FC86E /* CoachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachView.swift; sourceTree = "<group>"; };
+		63A2970FC31914856475B12B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6AC27ED06F0261428124F108 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		75DA652918B5A202F587C0C5 /* GoalComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalComponents.swift; sourceTree = "<group>"; };
+		8095F29D28889FD6FC5E4180 /* ReportComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportComponents.swift; sourceTree = "<group>"; };
+		86DA3003348E7FB66FE3B889 /* CoachViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachViewModel.swift; sourceTree = "<group>"; };
+		91CC1BD3F4547D77745AF673 /* ReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
+		95F342DDD0C9B77D60A5F9F7 /* MoodEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntryView.swift; sourceTree = "<group>"; };
+		9C0FF2133CCE404FEE4AD363 /* CoachService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachService.swift; sourceTree = "<group>"; };
+		9CD52E6A4EF490FF43475B0B /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		9FBC098F19A7F7D651C8C8F6 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		A66E3D59C3905098D87C070D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ABB9154AB4F5E4037D355861 /* MoodV6App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodV6App.swift; sourceTree = "<group>"; };
+		B24FB8E3714DEAE0AC7A2510 /* MoodEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntry.swift; sourceTree = "<group>"; };
+		C38A69434F39F817D7B9DF0B /* MoodStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodStore.swift; sourceTree = "<group>"; };
+		C732DA753894C94475309DA7 /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
+		C994829BD4BE2B0BAFCADCB1 /* DataExportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExportViewModel.swift; sourceTree = "<group>"; };
+		E2A4CBCB55FF60BA0A956B33 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		F31B20FF929645346D6955B8 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		F342AB9A0058CA25813AF575 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		ACC3B2FE2DDE370900054404 /* Exceptions for "MoodV6" folder in "MoodV6" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = ACC3B2DA2DDE370700054404 /* MoodV6 */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		ACC3B2DD2DDE370700054404 /* MoodV6 */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				ACC3B2FE2DDE370900054404 /* Exceptions for "MoodV6" folder in "MoodV6" target */,
-			);
-			path = MoodV6;
-			sourceTree = "<group>";
-		};
-		ACC3B2EF2DDE370900054404 /* MoodV6Tests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MoodV6Tests;
-			sourceTree = "<group>";
-		};
-		ACC3B2F92DDE370900054404 /* MoodV6UITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MoodV6UITests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
-		ACC3B2D82DDE370700054404 /* Frameworks */ = {
+		338196EB803EC8B14EFFB3C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACC3B2E92DDE370900054404 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACC3B2F32DDE370900054404 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				8BEEF325CB44850692B81419 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		ACC3B2D22DDE370700054404 = {
+		3D6189E1A725AE291A879632 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ACC3B2DD2DDE370700054404 /* MoodV6 */,
-				ACC3B2EF2DDE370900054404 /* MoodV6Tests */,
-				ACC3B2F92DDE370900054404 /* MoodV6UITests */,
-				ACC3B2DC2DDE370700054404 /* Products */,
+				09E2C5736ACD5FC25F5E6760 /* Goal.swift */,
+				B24FB8E3714DEAE0AC7A2510 /* MoodEntry.swift */,
+				6AC27ED06F0261428124F108 /* UserSettings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3D7250FD6E9BD7015FF6BB7F = {
+			isa = PBXGroup;
+			children = (
+				697FE055567DCB5EC061C043 /* MoodV6 */,
+				DC89B24183B9D56615BF32AC /* MoodV6Tests */,
+				9ED3D4BD46D4ADF86E789F9A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		ACC3B2DC2DDE370700054404 /* Products */ = {
+		611DCEFCBB4AED8715ACCECD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ACC3B2DB2DDE370700054404 /* MoodV6.app */,
-				ACC3B2EC2DDE370900054404 /* MoodV6Tests.xctest */,
-				ACC3B2F62DDE370900054404 /* MoodV6UITests.xctest */,
+				51DC88A1001EFEF4B33FC86E /* CoachView.swift */,
+				63A2970FC31914856475B12B /* ContentView.swift */,
+				36D3BA243483081066C45601 /* DataExportView.swift */,
+				C732DA753894C94475309DA7 /* GoalsView.swift */,
+				9CD52E6A4EF490FF43475B0B /* HistoryView.swift */,
+				95F342DDD0C9B77D60A5F9F7 /* MoodEntryView.swift */,
+				4401CA098D303815BF7BA7C3 /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		697FE055567DCB5EC061C043 /* MoodV6 */ = {
+			isa = PBXGroup;
+			children = (
+				A66E3D59C3905098D87C070D /* Assets.xcassets */,
+				4626EEFB53CA0BE44115796A /* Info.plist */,
+				E2A4CBCB55FF60BA0A956B33 /* Item.swift */,
+				0C4E583DB91014D639062E9D /* MoodV6.entitlements */,
+				ABB9154AB4F5E4037D355861 /* MoodV6App.swift */,
+				DE52663231A1FBFE7A9F24B4 /* Components */,
+				3D6189E1A725AE291A879632 /* Model */,
+				B8CAAB2B9CE7C88CB1AC336C /* Services */,
+				611DCEFCBB4AED8715ACCECD /* View */,
+				CF332C6AF520F2B325C456DF /* ViewModel */,
+				9137EE56401EC42C48F9220F /* Views */,
+			);
+			path = MoodV6;
+			sourceTree = "<group>";
+		};
+		9137EE56401EC42C48F9220F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4030F5F7C90519A38F4C3F0A /* ReportView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9ED3D4BD46D4ADF86E789F9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34749F831F620DA69B6B9CD6 /* MoodV6.app */,
+				44F8681FDF80271B7EFD7E37 /* MoodV6Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B8CAAB2B9CE7C88CB1AC336C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9C0FF2133CCE404FEE4AD363 /* CoachService.swift */,
+				18297C6E44B1EFEDA78A6FD1 /* DataExportService.swift */,
+				3F64887862D1419D68FB6785 /* GoalStore.swift */,
+				C38A69434F39F817D7B9DF0B /* MoodStore.swift */,
+				91CC1BD3F4547D77745AF673 /* ReportService.swift */,
+				F31B20FF929645346D6955B8 /* SettingsStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CF332C6AF520F2B325C456DF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				86DA3003348E7FB66FE3B889 /* CoachViewModel.swift */,
+				C994829BD4BE2B0BAFCADCB1 /* DataExportViewModel.swift */,
+				433D8B967B9975B0997C7BF4 /* GoalsViewModel.swift */,
+				20140E381CB3EA139D9737F7 /* HistoryViewModel.swift */,
+				42C0BCCD279F921FF981FA66 /* MoodEntryViewModel.swift */,
+				F342AB9A0058CA25813AF575 /* ReportViewModel.swift */,
+				9FBC098F19A7F7D651C8C8F6 /* SettingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DC89B24183B9D56615BF32AC /* MoodV6Tests */ = {
+			isa = PBXGroup;
+			children = (
+				01106F9B00362AA290A5D828 /* MoodV6Tests.swift */,
+			);
+			path = MoodV6Tests;
+			sourceTree = "<group>";
+		};
+		DE52663231A1FBFE7A9F24B4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				31CBC7E9AE0F82549EBF60EE /* CommonComponents.swift */,
+				75DA652918B5A202F587C0C5 /* GoalComponents.swift */,
+				338189A15D2635CC23A4F49D /* MoodComponents.swift */,
+				8095F29D28889FD6FC5E4180 /* ReportComponents.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ACC3B2DA2DDE370700054404 /* MoodV6 */ = {
+		4F788EDB42B6F2313F07BA48 /* MoodV6Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ACC3B2FF2DDE370900054404 /* Build configuration list for PBXNativeTarget "MoodV6" */;
+			buildConfigurationList = F0C8537A395A44D197BFF5E2 /* Build configuration list for PBXNativeTarget "MoodV6Tests" */;
 			buildPhases = (
-				ACC3B2D72DDE370700054404 /* Sources */,
-				ACC3B2D82DDE370700054404 /* Frameworks */,
-				ACC3B2D92DDE370700054404 /* Resources */,
+				ED9FE6520C7B19C49E3E5F74 /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				ACC3B2DD2DDE370700054404 /* MoodV6 */,
-			);
-			name = MoodV6;
-			packageProductDependencies = (
-			);
-			productName = MoodV6;
-			productReference = ACC3B2DB2DDE370700054404 /* MoodV6.app */;
-			productType = "com.apple.product-type.application";
-		};
-		ACC3B2EB2DDE370900054404 /* MoodV6Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ACC3B3042DDE370900054404 /* Build configuration list for PBXNativeTarget "MoodV6Tests" */;
-			buildPhases = (
-				ACC3B2E82DDE370900054404 /* Sources */,
-				ACC3B2E92DDE370900054404 /* Frameworks */,
-				ACC3B2EA2DDE370900054404 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ACC3B2EE2DDE370900054404 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				ACC3B2EF2DDE370900054404 /* MoodV6Tests */,
+				6F0C07D33DF9188C3306A562 /* PBXTargetDependency */,
 			);
 			name = MoodV6Tests;
 			packageProductDependencies = (
 			);
 			productName = MoodV6Tests;
-			productReference = ACC3B2EC2DDE370900054404 /* MoodV6Tests.xctest */;
+			productReference = 44F8681FDF80271B7EFD7E37 /* MoodV6Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		ACC3B2F52DDE370900054404 /* MoodV6UITests */ = {
+		8D3D7A41A0A154D11FBCA51A /* MoodV6 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ACC3B3072DDE370900054404 /* Build configuration list for PBXNativeTarget "MoodV6UITests" */;
+			buildConfigurationList = EB00F3A6535EB6A7FEA21E2A /* Build configuration list for PBXNativeTarget "MoodV6" */;
 			buildPhases = (
-				ACC3B2F22DDE370900054404 /* Sources */,
-				ACC3B2F32DDE370900054404 /* Frameworks */,
-				ACC3B2F42DDE370900054404 /* Resources */,
+				4ABF728F2CB7A0E807D96568 /* Sources */,
+				249C15E7F271607CC959152B /* Resources */,
+				338196EB803EC8B14EFFB3C8 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				ACC3B2F82DDE370900054404 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				ACC3B2F92DDE370900054404 /* MoodV6UITests */,
-			);
-			name = MoodV6UITests;
+			name = MoodV6;
 			packageProductDependencies = (
+				CE3B04ABFC615B1140BF2745 /* RealmSwift */,
 			);
-			productName = MoodV6UITests;
-			productReference = ACC3B2F62DDE370900054404 /* MoodV6UITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			productName = MoodV6;
+			productReference = 34749F831F620DA69B6B9CD6 /* MoodV6.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		ACC3B2D32DDE370700054404 /* Project object */ = {
+		2C41836A6238FBE05BF1B324 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1630;
-				LastUpgradeCheck = 1630;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					ACC3B2DA2DDE370700054404 = {
-						CreatedOnToolsVersion = 16.3;
-					};
-					ACC3B2EB2DDE370900054404 = {
-						CreatedOnToolsVersion = 16.3;
-						TestTargetID = ACC3B2DA2DDE370700054404;
-					};
-					ACC3B2F52DDE370900054404 = {
-						CreatedOnToolsVersion = 16.3;
-						TestTargetID = ACC3B2DA2DDE370700054404;
-					};
 				};
 			};
-			buildConfigurationList = ACC3B2D62DDE370700054404 /* Build configuration list for PBXProject "MoodV6" */;
+			buildConfigurationList = 95319D4C4C158D268150D4E3 /* Build configuration list for PBXProject "MoodV6" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
-			mainGroup = ACC3B2D22DDE370700054404;
+			mainGroup = 3D7250FD6E9BD7015FF6BB7F;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
-			productRefGroup = ACC3B2DC2DDE370700054404 /* Products */;
+			packageReferences = (
+				EA26D165E5C87F82C2321588 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
+			preferredProjectObjectVersion = 54;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ACC3B2DA2DDE370700054404 /* MoodV6 */,
-				ACC3B2EB2DDE370900054404 /* MoodV6Tests */,
-				ACC3B2F52DDE370900054404 /* MoodV6UITests */,
+				8D3D7A41A0A154D11FBCA51A /* MoodV6 */,
+				4F788EDB42B6F2313F07BA48 /* MoodV6Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		ACC3B2D92DDE370700054404 /* Resources */ = {
+		249C15E7F271607CC959152B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACC3B2EA2DDE370900054404 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACC3B2F42DDE370900054404 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				1394A4AC18716B8F65833FCC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		ACC3B2D72DDE370700054404 /* Sources */ = {
+		4ABF728F2CB7A0E807D96568 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				008D4793EB1877FAC8AE0EA3 /* CoachService.swift in Sources */,
+				5DB16506772DB00F9EE16745 /* CoachView.swift in Sources */,
+				5BD8BF32D2235A471CB5CB60 /* CoachViewModel.swift in Sources */,
+				EC9CE651A59D0BD17B71C991 /* CommonComponents.swift in Sources */,
+				46EB5C3D5D8C1AB92AE45B8B /* ContentView.swift in Sources */,
+				17235001C5133B8E2F424220 /* DataExportService.swift in Sources */,
+				31BDDB79752D48F741ABE787 /* DataExportView.swift in Sources */,
+				B18B8D790C8ADAF0909A5DD6 /* DataExportViewModel.swift in Sources */,
+				508F74E43573B265104754AA /* Goal.swift in Sources */,
+				911F8CFE71C060DD7FA45238 /* GoalComponents.swift in Sources */,
+				D7080B0A336847DA0D194E27 /* GoalStore.swift in Sources */,
+				DBA7A1AE1BE676FA8253C577 /* GoalsView.swift in Sources */,
+				6EF1502236AAF9D5B91F68BA /* GoalsViewModel.swift in Sources */,
+				93A0ED40C1831D4EE9F9F1BE /* HistoryView.swift in Sources */,
+				84F47BCDE0D95D7769428F1E /* HistoryViewModel.swift in Sources */,
+				7BA184F9ED18BD51BD02FA16 /* Item.swift in Sources */,
+				E9CEC38CDA514B78A6CFEB11 /* MoodComponents.swift in Sources */,
+				C9E65F8A065A65526C8A5E3F /* MoodEntry.swift in Sources */,
+				9BFBBBD38F154AA3423E263D /* MoodEntryView.swift in Sources */,
+				DD923CD41E9FC6612ED0F33E /* MoodEntryViewModel.swift in Sources */,
+				59AC5874BABD9F54E788D605 /* MoodStore.swift in Sources */,
+				2DA8402D7CD2C1C6C8A4A006 /* MoodV6App.swift in Sources */,
+				46498D457BA7C32571B47DEC /* ReportComponents.swift in Sources */,
+				A3EC4FF833B45B70C42627DE /* ReportService.swift in Sources */,
+				B98E17A59317217F196AD241 /* ReportView.swift in Sources */,
+				7E0BE3470BF0E21CFD2A442B /* ReportViewModel.swift in Sources */,
+				647505A7EB9D9BC39D566E63 /* SettingsStore.swift in Sources */,
+				CA6B6851FA73DDCC1E7410DE /* SettingsView.swift in Sources */,
+				CEB7FA18890C3C50DB60B090 /* SettingsViewModel.swift in Sources */,
+				BABF98B59BDFDCD21FBADC7B /* UserSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ACC3B2E82DDE370900054404 /* Sources */ = {
+		ED9FE6520C7B19C49E3E5F74 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACC3B2F22DDE370900054404 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				449F6C4D328FC16A90EC3CD2 /* MoodV6Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		ACC3B2EE2DDE370900054404 /* PBXTargetDependency */ = {
+		6F0C07D33DF9188C3306A562 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ACC3B2DA2DDE370700054404 /* MoodV6 */;
-			targetProxy = ACC3B2ED2DDE370900054404 /* PBXContainerItemProxy */;
-		};
-		ACC3B2F82DDE370900054404 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ACC3B2DA2DDE370700054404 /* MoodV6 */;
-			targetProxy = ACC3B2F72DDE370900054404 /* PBXContainerItemProxy */;
+			target = 8D3D7A41A0A154D11FBCA51A /* MoodV6 */;
+			targetProxy = 46418C7AC91F4116FF5C7997 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		ACC3B3002DDE370900054404 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MoodV6/MoodV6.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 95BL5DV98R;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MoodV6/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Team.MoodV6;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		ACC3B3012DDE370900054404 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MoodV6/MoodV6.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 95BL5DV98R;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MoodV6/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Team.MoodV6;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		ACC3B3022DDE370900054404 /* Debug */ = {
+		215A85F0BC08BD426334C387 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -389,17 +395,15 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 95BL5DV98R;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"DEBUG=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -407,25 +411,58 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		ACC3B3032DDE370900054404 /* Release */ = {
+		25D65141A8BDD0AC4C407999 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = MoodV6/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourdomain.moodv6;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		51BCE4159239F3B00F168871 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = MoodV6/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourdomain.moodv6;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5297E1AB46D05819169EBCCA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -453,11 +490,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 95BL5DV98R;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -465,128 +500,99 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				VALIDATE_PRODUCT = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
-		ACC3B3052DDE370900054404 /* Debug */ = {
+		AF5E5DB80C6C4F0DD8AD1FF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 95BL5DV98R;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Team.MoodV6Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourdomain.MoodV6Tests;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoodV6.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MoodV6";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoodV6.app/MoodV6";
 			};
 			name = Debug;
 		};
-		ACC3B3062DDE370900054404 /* Release */ = {
+		E14BCC8581F0C5642EE924C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 95BL5DV98R;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Team.MoodV6Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourdomain.MoodV6Tests;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoodV6.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MoodV6";
-			};
-			name = Release;
-		};
-		ACC3B3082DDE370900054404 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 95BL5DV98R;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Team.MoodV6UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MoodV6;
-			};
-			name = Debug;
-		};
-		ACC3B3092DDE370900054404 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 95BL5DV98R;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Team.MoodV6UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MoodV6;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoodV6.app/MoodV6";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ACC3B2D62DDE370700054404 /* Build configuration list for PBXProject "MoodV6" */ = {
+		95319D4C4C158D268150D4E3 /* Build configuration list for PBXProject "MoodV6" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ACC3B3022DDE370900054404 /* Debug */,
-				ACC3B3032DDE370900054404 /* Release */,
+				215A85F0BC08BD426334C387 /* Debug */,
+				5297E1AB46D05819169EBCCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		ACC3B2FF2DDE370900054404 /* Build configuration list for PBXNativeTarget "MoodV6" */ = {
+		EB00F3A6535EB6A7FEA21E2A /* Build configuration list for PBXNativeTarget "MoodV6" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ACC3B3002DDE370900054404 /* Debug */,
-				ACC3B3012DDE370900054404 /* Release */,
+				25D65141A8BDD0AC4C407999 /* Debug */,
+				51BCE4159239F3B00F168871 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		ACC3B3042DDE370900054404 /* Build configuration list for PBXNativeTarget "MoodV6Tests" */ = {
+		F0C8537A395A44D197BFF5E2 /* Build configuration list for PBXNativeTarget "MoodV6Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ACC3B3052DDE370900054404 /* Debug */,
-				ACC3B3062DDE370900054404 /* Release */,
+				AF5E5DB80C6C4F0DD8AD1FF6 /* Debug */,
+				E14BCC8581F0C5642EE924C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ACC3B3072DDE370900054404 /* Build configuration list for PBXNativeTarget "MoodV6UITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ACC3B3082DDE370900054404 /* Debug */,
-				ACC3B3092DDE370900054404 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EA26D165E5C87F82C2321588 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.45.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE3B04ABFC615B1140BF2745 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA26D165E5C87F82C2321588 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = ACC3B2D32DDE370700054404 /* Project object */;
+	rootObject = 2C41836A6238FBE05BF1B324 /* Project object */;
 }
